@@ -7,7 +7,7 @@ const ProductList = () => {
 
   useEffect(() => {
     // 從後端 API 擷取產品
-    fetch('http://192.168.1.125:3001/api/products')
+    fetch('https://hcbackend.onrender.com/api/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('擷取產品時發生錯誤：', error));

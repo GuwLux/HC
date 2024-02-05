@@ -14,7 +14,7 @@ const ProductManagement = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://192.168.1.125:3001/api/products');
+      const response = await axios.get('https://hcbackend.onrender.com/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -42,7 +42,7 @@ const ProductManagement = () => {
       formData.append('imageFile', newProduct.imageFile);
 
       // 發送包含檔案的新增商品請求
-      await axios.post('http://192.168.1.125:3001/api/products', formData, {
+      await axios.post('https://hcbackend.onrender.com/api/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -63,7 +63,7 @@ const ProductManagement = () => {
     try {
       setLoading(true);
       // 發送刪除商品的請求
-      await axios.delete(`http://192.168.1.125:3001/api/products/${productId}`);
+      await axios.delete(`https://hcbackend.onrender.com/api/products/${productId}`);
       // 重新獲取商品列表
       fetchProducts();
     } catch (error) {

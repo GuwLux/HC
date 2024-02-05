@@ -11,7 +11,7 @@ const ProductDetail = () => {
     console.log("ProductDetail ID:", id);  // 確認 id 是否正確
     if (id) {
       // 根據產品 ID 擷取產品詳細信息
-      fetch(`http://192.168.1.125:3001/api/products/${id}`)
+      fetch(`https://hcbackend.onrender.com/api/products/${id}`)
         .then(response => response.json())
         .then(data => setProduct(data))
         .catch(error => console.error('擷取產品詳細信息時發生錯誤：', error));
