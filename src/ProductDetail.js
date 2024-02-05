@@ -28,6 +28,8 @@ const ProductDetail = () => {
       <div style={{ textAlign: 'center' }}>
         <img src={product.imageUrl} alt={product.name} style={{ maxWidth: '100%', maxHeight: '300px', marginBottom: '10px' }} />
         <h3 style={{ fontSize: '1.5em' }}>{product.name}</h3>
+        <p style={{ fontSize: '1.2em' }}>{product.description}</p>
+        <p style={{ fontSize: '1.2em' }}>適用車種：{product.type}</p>
         <p style={{ fontSize: '1.2em' }}>價格：${product.price}</p>
         {/* 根據需要添加更多詳情 */}
       </div>
