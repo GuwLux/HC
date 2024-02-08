@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // 從後端 API 擷取產品
@@ -12,20 +11,6 @@ const ProductList = () => {
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("擷取產品時發生錯誤：", error));
-
-    // 檢查螢幕寬度
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // 監聽視窗大小變化
-    window.addEventListener("resize", handleResize);
-    handleResize(); // 初始化
-
-    // 清除監聽器
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   // 搜尋功能
@@ -52,7 +37,8 @@ const ProductList = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: isMobile ? "center" : "space-around",
+          justifyContent: "space-between", // 使得商品卡片兩個為一排填滿左右
+          alignItems: "stretch", // 讓商品卡片填滿父容器的高度
         }}
       >
         {filteredProducts.map((product) => (
@@ -62,18 +48,16 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              width: isMobile ? "90%" : "15%",
-              height: "320px", // 修改這裡，設定商品卡片的高度
+              flex: "0 0 calc(16.666% - 20px)", // 調整商品卡片的寬度，計算為 100% / 6 - margin 的寬度
               margin: "10px",
-              flex: isMobile ? "0 0 90%" : "0 0 14%",
             }}
           >
             <div
               style={{
                 border: "1px solid #ddd",
                 padding: "10px",
-                height: "100%",
                 boxSizing: "border-box",
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -85,7 +69,7 @@ const ProductList = () => {
                 alt={product.name}
                 style={{
                   maxWidth: "100%",
-                  maxHeight: "125px",
+                  maxHeight: "125px", // 將最大高度設置為父元素的高度
                   marginBottom: "10px",
                 }}
               />
