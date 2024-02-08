@@ -59,6 +59,10 @@ const ProductList = () => {
                 padding: "10px",
                 height: "100%",
                 boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center", // 將內容置中
               }}
             >
               <img
@@ -66,10 +70,11 @@ const ProductList = () => {
                 alt={product.name}
                 style={{
                   maxWidth: "100%",
-                  maxHeight: "150px",
+                  maxHeight: "125px", // 將最大高度設置為父元素的高度
                   marginBottom: "10px",
                 }}
               />
+
               <h3 style={{ fontSize: "1.2em" }}>{product.name}</h3>
               <p>{product.type}</p>
               <p>價格：${product.price}</p>
