@@ -37,7 +37,7 @@ const ProductList = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-between", // 電腦版：使得商品卡片六個為一排填滿左右
+          justifyContent: "space-between", // 使得商品卡片兩個為一排填滿左右
           alignItems: "stretch", // 讓商品卡片填滿父容器的高度
         }}
       >
@@ -48,12 +48,14 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              flex: "0 0 calc(16.666% - 20px)", // 電腦版：調整商品卡片的寬度，計算為 100% / 6 - margin 的寬度
+              flex: "0 0 calc(50% - 20px)", // 調整商品卡片的寬度，計算為 50% 減去 margin 的寬度
               margin: "10px",
               width: "90%", // 手機版：設置商品卡片的寬度為90%
-              "@media (max-width: 1000px)": {
-                flex: "0 0 calc(50% - 20px)", // 手機版：調整商品卡片的寬度，計算為 100% / 2 - margin 的寬度
-                width: "auto", // 手機版：取消寬度限制
+              "@media (min-width: 768px) and (max-width: 2448px)": { // 根據手機螢幕寬度設置媒體查詢
+                flex: "0 0 calc(50% - 20px)", // 手機版：調整商品卡片的寬度，計算為 50% 減去 margin 的寬度
+              },
+              "@media (max-width: 767px)": { // 手機版：設置媒體查詢，條件是螢幕寬度小於等於767px
+                flex: "0 0 calc(50% - 20px)", // 手機版：調整商品卡片的寬度，計算為 50% 減去 margin 的寬度
               },
             }}
           >
