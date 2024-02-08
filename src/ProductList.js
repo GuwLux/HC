@@ -51,7 +51,7 @@ const ProductList = () => {
               height: "300px", // 修改這裡，設定商品卡片的高度
               margin: "10px",
               "@media (max-width: 768px)": {
-                width: "100%",
+                width: "80%",
               },
               "@media (min-width: 769px)": {
                 flex: "0 0 48%",
