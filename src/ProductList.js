@@ -51,7 +51,7 @@ const ProductList = () => {
               flex: "0 0 calc(16.666% - 20px)", // 電腦版：調整商品卡片的寬度，計算為 100% / 6 - margin 的寬度
               margin: "10px",
               width: "90%", // 手機版：設置商品卡片的寬度為90%
-              "@media (max-width: 800px)": {
+              "@media (max-width: 1000px)": {
                 flex: "0 0 calc(50% - 20px)", // 手機版：調整商品卡片的寬度，計算為 100% / 2 - margin 的寬度
                 width: "auto", // 手機版：取消寬度限制
               },
