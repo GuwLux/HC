@@ -47,10 +47,10 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              width: "14%",
-              height: "300px", // 修改這裡，設定商品卡片的高度
+              width: "15%",
+              height: "320px", // 修改這裡，設定商品卡片的高度
               margin: "10px",
-              flex: "0 0 48%", // 直接設定商品卡片的寬度
+              flex: "0 0 14%", // 直接設定商品卡片的寬度
             }}
           >
             <div
