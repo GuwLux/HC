@@ -47,11 +47,11 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              width: "14%",
+              width: "15%",
               height: "300px", // 修改這裡，設定商品卡片的高度
               margin: "10px",
               "@media (max-width: 768px)": {
-                width: "80%",
+                width: "20%",
               },
               "@media (min-width: 769px)": {
                 flex: "0 0 48%",
