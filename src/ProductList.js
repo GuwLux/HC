@@ -47,10 +47,15 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              width: "15%",
+              width: "15%", // 電腦瀏覽器上的寬度
               height: "320px", // 修改這裡，設定商品卡片的高度
               margin: "10px",
               flex: "0 0 14%", // 直接設定商品卡片的寬度
+              // 手機版樣式
+              "@media (max-width: 768px)": {
+                width: "90%", // 手機瀏覽器上的寬度
+                flex: "0 0 90%", // 手機瀏覽器上的寬度
+              },
             }}
           >
             <div
