@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // 從後端 API 擷取產品
@@ -11,6 +12,11 @@ const ProductList = () => {
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("擷取產品時發生錯誤：", error));
+
+    // 檢測裝置是否為手機
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsMobile(userAgent.includes("mobile") || userAgent.includes("tablet"));
+
   }, []);
 
   // 搜尋功能
@@ -37,7 +43,7 @@ const ProductList = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-around",
+          justifyContent: isMobile ? "center" : "space-around",
         }}
       >
         {filteredProducts.map((product) => (
@@ -47,7 +53,7 @@ const ProductList = () => {
             style={{
               textDecoration: "none",
               color: "inherit",
-              width: "15%", // 電腦瀏覽器上的寬度
+              width: isMobile ? "45%" : "15%", // 手機和電腦瀏覽器上的寬度
               height: "320px", // 修改這裡，設定商品卡片的高度
               margin: "10px",
               flex: "0 0 14%", // 直接設定商品卡片的寬度
