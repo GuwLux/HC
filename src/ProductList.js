@@ -45,7 +45,6 @@ const ProductList = () => {
           <h3 style={{ fontSize: "1.2rem", marginBottom: "5px" }}>公司資訊</h3>
           <p style={{ fontSize: "1rem", marginBottom: "5px" }}>地址： <a href="https://maps.app.goo.gl/hNZmSEBuqMxP8kq3A" target="_blank" rel="noopener noreferrer">新北市三芝區中正路二段6號</a></p>
           <p style={{ fontSize: "1rem", marginBottom: "5px" }}>電話：02-2636-5950</p>
-          <p style={{ fontSize: "1rem", marginBottom: "5px" }}>Email：info@example.com</p>
           <p style={{ fontSize: "1rem", marginBottom: "0" }}>
             營業時間：<br />
             星期日 09:30–20:00<br />
