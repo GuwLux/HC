@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook } from 'react-icons/fa'; // 導入FaFacebook圖標
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ const ProductList = () => {
   };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f9f9f9", padding: "20px" }}>
+    <div style={{ position: "relative", fontFamily: "Arial, sans-serif", backgroundColor: "#f9f9f9", padding: "20px" }}>
       <div style={{ backgroundColor: "#333", color: "#fff", padding: "10px", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <button onClick={toggleSideMenu} style={{ marginRight: "20px", border: "none", background: "none", color: "#fff", fontSize: "1.2rem", cursor: "pointer" }}>&#9776;</button>
@@ -45,6 +46,7 @@ const ProductList = () => {
           <h3 style={{ fontSize: "1.2rem", marginBottom: "5px" }}>公司資訊</h3>
           <p style={{ fontSize: "1rem", marginBottom: "5px" }}>地址： <a href="https://maps.app.goo.gl/hNZmSEBuqMxP8kq3A" target="_blank" rel="noopener noreferrer">新北市三芝區中正路二段6號</a></p>
           <p style={{ fontSize: "1rem", marginBottom: "5px" }}>電話：02-2636-5950</p>
+          <p style={{ fontSize: "1rem", marginBottom: "5px" }}>Email：info@example.com</p>
           <p style={{ fontSize: "1rem", marginBottom: "0" }}>
             營業時間：<br />
             星期日 09:30–20:00<br />
@@ -80,6 +82,13 @@ const ProductList = () => {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* FB LOGO */}
+      <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: "999" }}>
+        <a href="https://www.facebook.com/profile.php?id=100076617022916" target="_blank" rel="noopener noreferrer">
+          <FaFacebook size={40} style={{ color: "#3b5998", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", borderRadius: "50%", padding: "10px", backgroundColor: "#fff" }} />
+        </a>
       </div>
     </div>
   );
